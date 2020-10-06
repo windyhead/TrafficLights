@@ -9,10 +9,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/TrafficPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LightBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3DC54541-A257-4AC7-826A-004A212A4332/a8/aac63f14/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TrafficStatesData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TrafficController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/LightBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/StatesLibrary.cs" />
+        <option value="$PROJECT_DIR$/Assets/TrafficController.cs" />
+        <option value="$PROJECT_DIR$/Assets/TrafficStatesData.cs" />
         <option value="$PROJECT_DIR$/Assets/TrafficPanel.cs" />
       </list>
     </option>

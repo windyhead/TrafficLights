@@ -1,12 +1,8 @@
-﻿using System;
-using System.Globalization;
-using UnityEngine.EventSystems;
-using UnityEngine.PlayerLoop;
-
-namespace Lights
+﻿namespace Lights
 {
     using UnityEngine;
     using UnityEngine.UI;
+    using System;
 
     public class TrafficPanel : MonoBehaviour
     {

@@ -13,21 +13,29 @@
 
     public class LightBox : MonoBehaviour
     {
-        [SerializeField] private LampColors _color = default;
+        [SerializeField] private Traffic _traffic = default;
         [SerializeField] private Image _lamp = default;
         private Color _definedColor = default;
-
-        private void Awake()
+        private TrafficController _controller;
+        public void Init(TrafficController controller)
         {
-            switch (_color)
+            _controller = controller;
+            
+            switch (_traffic)
             {
-                case LampColors.Red:
+                case Traffic.Stop:
                     SetLampColor(Color.red);
                     break;
-                case LampColors.Yellow:
+                case Traffic.Attention:
                     SetLampColor(Color.yellow);
                     break;
-                case LampColors.Green:
+                case Traffic.Go:
+                    SetLampColor(Color.green);
+                    break;
+                case Traffic.GoRight:
+                    SetLampColor(Color.green);
+                    break;
+                case Traffic.GoLeft:
                     SetLampColor(Color.green);
                     break;
                 default:
@@ -35,13 +43,27 @@
                     SetLampColor(Color.gray);
                     break;
             }
-        }
 
-        public void EnableLight(bool blink, float blinkLength, float blinkTimer, float blinkInterval)
+            _controller.OnLightEnabled += EnableLight;
+            _controller.OnLightDisabled += DisableLight;
+        }
+        
+
+        public void EnableLight(Traffic state,bool blink, float blinkLength, float blinkTimer, float blinkInterval)
         {
+            if(state!=_traffic)
+                return;
+            
             _lamp.color = _definedColor;
             if (blink)
                 StartCoroutine(Blink(blinkLength, blinkTimer, blinkInterval));
+        }
+        
+        ~LightBox()
+        {
+            _controller.OnLightEnabled -= EnableLight;
+            _controller.OnLightDisabled -= DisableLight;
+            Debug.Log("Destroyed");
         }
 
         private IEnumerator Blink(float blinkLength, float blinkTimer, float blinkInterval)
@@ -53,11 +75,16 @@
                 yield return new WaitForSeconds(blinkInterval / 2);
                 _lamp.color = _definedColor;
                 yield return new WaitForSeconds(blinkInterval / 2);
-                DisableLight();
+                DisableLight(_traffic);
             }
         }
 
-        public void DisableLight() => _lamp.color = Color.gray;
+        public void DisableLight(Traffic state)
+        {
+            if (state == _traffic)
+            _lamp.color = Color.gray;
+        }
+        
         private void SetLampColor(Color color) => _definedColor = color;
     }
 }
