@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 1
+  _traffic: 2
   _lamp: {fileID: 1756209499788801586}
 --- !u!1 &1756209498860241307
 GameObject:
@@ -359,31 +359,13 @@ MonoBehaviour:
   useAttentionBox: 0
   useLeftBox: 0
   useRightBox: 0
-  _stopState:
-    _state: 0
-    time: 6
-    message: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0441\u044C!"
-  _attentionState:
-    _state: 4
-    time: 3
-    message: "\u0412\u043D\u0438\u043C\u0430\u043D\u0438\u0435!"
-  _goState:
-    _state: 1
-    time: 5
-    message: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043F\u0435\u0440\u0435\u0434!"
-  _goLeftState:
-    _state: 2
-    time: 3
-    message: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043D\u0430\u043B\u0435\u0432\u043E!"
-  _goRightState:
-    _state: 3
-    time: 3
-    message: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043E!"
-  _stopBox: {fileID: 1756209499154773036}
-  _attentionBox: {fileID: 1756209500945083778}
-  _middleGoBox: {fileID: 1756209500326877205}
-  _leftGoBox: {fileID: 1756209498826931838}
-  _rightGoBox: {fileID: 1756209500635955596}
+  _trafficStatesData: {fileID: 11400000, guid: 384e96e80d48d764897872b874ea99d2, type: 2}
+  _lightBoxes:
+  - {fileID: 1756209499154773036}
+  - {fileID: 1756209500945083778}
+  - {fileID: 1756209498826931838}
+  - {fileID: 1756209500326877205}
+  - {fileID: 1756209500635955596}
   _trafficPanel: {fileID: 1756209500417738759}
 --- !u!1 &1756209498953585832
 GameObject:
@@ -1351,7 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 0
+  _traffic: 0
   _lamp: {fileID: 1756209500641031445}
 --- !u!1 &1756209499199980643
 GameObject:
@@ -4540,7 +4522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 1
+  _traffic: 1
   _lamp: {fileID: 1756209499645525032}
 --- !u!1 &1756209500359067406
 GameObject:
@@ -5482,7 +5464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 1
+  _traffic: 3
   _lamp: {fileID: 1756209499831339586}
 --- !u!1 &1756209500641031443
 GameObject:
@@ -6456,7 +6438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 2
+  _traffic: 4
   _lamp: {fileID: 1756209498860241309}
 --- !u!1 &3587471414862799667
 GameObject:
