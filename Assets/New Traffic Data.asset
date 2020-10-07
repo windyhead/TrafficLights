@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: New Traffic Data
   m_EditorClassIdentifier: 
   _trafficStates:
-  - _state: 0
-    time: 5
-    message: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435\u0441\u044C!"
-  - _state: 1
-    time: 5
-    message: "\u041F\u0440\u043E\u0435\u0437\u0434 \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043D!"
-  - _state: 4
-    time: 3
-    message: "\u0412\u043D\u0438\u043C\u0430\u043D\u0438\u0435!"
-  - _state: 2
-    time: 3
-    message: "\u041F\u043E\u0432\u0435\u0440\u043D\u0438 \u043D\u0430\u043B\u0435\u0432\u043E!"
-  - _state: 3
-    time: 3
-    message: "\u041F\u043E\u0432\u0435\u0440\u043D\u0438 \u043D\u0430\u043F\u0440\u0430\u0432\u043E!"
+  - _defaultState: 0
+    _defaultMessage: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0441\u044C!"
+    _defaultTime: 5
+  - _defaultState: 4
+    _defaultMessage: "\u0412\u043D\u0438\u043C\u0430\u043D\u0438\u0435!"
+    _defaultTime: 3
+  - _defaultState: 1
+    _defaultMessage: "\u041F\u0440\u043E\u0435\u0437\u0434 \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043D!"
+    _defaultTime: 5
+  - _defaultState: 2
+    _defaultMessage: "\u041F\u043E\u0432\u0435\u0440\u043D\u0438 \u043D\u0430\u043B\u0435\u0432\u043E!"
+    _defaultTime: 3
+  - _defaultState: 3
+    _defaultMessage: "\u041F\u043E\u0432\u0435\u0440\u043D\u0438 \u043D\u0430\u043F\u0440\u0430\u0432\u043E!"
+    _defaultTime: 3

@@ -15,12 +15,14 @@
         public bool useLeftBox = false;
         public bool useRightBox = false;
 
-        [Header("Assets")] [SerializeField] private TrafficStatesData _trafficStatesData;
-        [SerializeField] private LightBox[] _lightBoxes;
+        [Header("Assets")] 
+        [SerializeField] private TrafficStatesData _trafficStatesData = default;
+        [SerializeField] private LightBox[] _lightBoxes = default;
         [SerializeField] private TrafficPanel _trafficPanel = default;
 
         private const float BlinkLength = 2f;
         private const float BlinkInterval = 0.5f;
+
         private Traffic _currentState;
         private float _timer = 0;
         private bool _isSimulationStarted;
@@ -31,10 +33,10 @@
             _trafficStatesData.CreateStatesDictionary();
             SetLightBoxes();
             DisableLightBoxes();
-            _trafficPanel.Init(this, _trafficStatesData.GetState(Traffic.Stop).time,
-                _trafficStatesData.GetState(Traffic.Attention).time,
-                _trafficStatesData.GetState(Traffic.Go).time, _trafficStatesData.GetState(Traffic.GoLeft).time,
-                _trafficStatesData.GetState(Traffic.GoRight).time, useBlinkLites, useAttentionBox, useLeftBox,
+            _trafficPanel.Init(this, _trafficStatesData.GetState(Traffic.Stop).Time,
+                _trafficStatesData.GetState(Traffic.Attention).Time,
+                _trafficStatesData.GetState(Traffic.Go).Time, _trafficStatesData.GetState(Traffic.GoLeft).Time,
+                _trafficStatesData.GetState(Traffic.GoRight).Time, useBlinkLites, useAttentionBox, useLeftBox,
                 useRightBox);
         }
 
@@ -45,9 +47,9 @@
 
             _timer += Time.deltaTime;
 
-            OnTimerChanged?.Invoke(_trafficStatesData.GetState(_currentState).time - _timer);
+            OnTimerChanged?.Invoke(_trafficStatesData.GetState(_currentState).Time - _timer);
 
-            if (_timer >= _trafficStatesData.GetState(_currentState).time)
+            if (_timer >= _trafficStatesData.GetState(_currentState).Time)
             {
                 _timer = 0;
                 SwitchState();
@@ -74,7 +76,7 @@
 
         public void ChangeTimers(Traffic state, float newTime)
         {
-            _trafficStatesData.GetState(state).time = newTime;
+            _trafficStatesData.GetState(state).Time = newTime;
         }
 
         private void SetLightBoxes()
@@ -125,14 +127,14 @@
         private void SetState(Traffic state)
         {
             _currentState = state;
-            OnStateChanged?.Invoke(_trafficStatesData.GetState(_currentState).message);
+            OnStateChanged?.Invoke(_trafficStatesData.GetState(_currentState).Message);
             SwitchLightBox();
-            Debug.Log(_trafficStatesData.GetState(_currentState).message);
+            Debug.Log(_trafficStatesData.GetState(_currentState).Message);
         }
 
         private void SwitchLightBox()
         {
-            float blinkTimer = _trafficStatesData.GetState(_currentState).time - BlinkLength;
+            float blinkTimer = _trafficStatesData.GetState(_currentState).Time - BlinkLength;
             OnLightEnabled?.Invoke(_currentState, useBlinkLites, BlinkLength, blinkTimer, BlinkInterval);
         }
 

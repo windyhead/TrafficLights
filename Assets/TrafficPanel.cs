@@ -27,7 +27,9 @@
         [SerializeField] private Toggle _goRightToggle = default;
 
         [Header("Switched Light Boxes")] 
-        [SerializeField] private GameObject _attentionBox = default;
+        [SerializeField]
+        private GameObject _attentionBox = default;
+
         [SerializeField] private GameObject _goLeftBox = default;
         [SerializeField] private GameObject _goRightBox = default;
 
@@ -59,7 +61,7 @@
 
             SetTimers();
             SetToggles();
-            
+
             OnBlinkToggleChanged(blink);
             OnAttentionToggleChanged(attention);
             OnGoLeftToggleChanged(goLeft);
