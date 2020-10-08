@@ -68,7 +68,7 @@
                 yield return new WaitForSeconds(blinkInterval / 2);
                 _lamp.color = _definedColor;
                 yield return new WaitForSeconds(blinkInterval / 2);
-                DisableLamp();
+                SetLampGray();
             }
         }
 
@@ -77,12 +77,12 @@
             if (state == _definedState)
             {
                 StopAllCoroutines();
-                DisableLamp();
+                SetLampGray();
             }
         }
-        
+
         private void DefineLampColor(Color color) => _definedColor = color;
-        
-        private void DisableLamp() => _lamp.color = Color.gray;
+
+        private void SetLampGray() => _lamp.color = Color.gray;
     }
 }
