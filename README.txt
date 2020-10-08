@@ -1,1 +1,0 @@
-Откройте сцену TrafficSimulationScene
