@@ -19,6 +19,7 @@
         [SerializeField] private float _defaultTime = default;
 
         private const float DefaultStateTime = 5;
+        
         private Traffic _state;
         private string _message;
         private float _time;
@@ -26,13 +27,13 @@
         public Traffic State
         {
             get => _state;
-            set => _state = value;
+            protected set => _state = value;
         }
 
         public string Message
         {
             get => _message;
-            set => _message = value;
+           protected set => _message = value;
         }
 
         public float Time

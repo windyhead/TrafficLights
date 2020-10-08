@@ -6,7 +6,7 @@
 
     public class LightBox : MonoBehaviour
     {
-        [SerializeField] private Traffic _traffic = default;
+        [SerializeField] private Traffic _definedState = default;
         [SerializeField] private Image _lamp = default;
 
         private Color _definedColor = default;
@@ -16,26 +16,26 @@
         {
             _controller = controller;
 
-            switch (_traffic)
+            switch (_definedState)
             {
                 case Traffic.Stop:
-                    SetLampColor(Color.red);
+                    DefineLampColor(Color.red);
                     break;
                 case Traffic.Attention:
-                    SetLampColor(Color.yellow);
+                    DefineLampColor(Color.yellow);
                     break;
                 case Traffic.Go:
-                    SetLampColor(Color.green);
+                    DefineLampColor(Color.green);
                     break;
                 case Traffic.GoRight:
-                    SetLampColor(Color.green);
+                    DefineLampColor(Color.green);
                     break;
                 case Traffic.GoLeft:
-                    SetLampColor(Color.green);
+                    DefineLampColor(Color.green);
                     break;
                 default:
                     Debug.LogError($"light box: {name} color was not defined in inspector, please fix it!");
-                    SetLampColor(Color.gray);
+                    DefineLampColor(Color.gray);
                     break;
             }
 
@@ -51,7 +51,7 @@
 
         private void EnableLight(Traffic state, bool blink, float blinkLength, float blinkTimer, float blinkInterval)
         {
-            if (state != _traffic)
+            if (state != _definedState)
                 return;
 
             _lamp.color = _definedColor;
@@ -68,16 +68,21 @@
                 yield return new WaitForSeconds(blinkInterval / 2);
                 _lamp.color = _definedColor;
                 yield return new WaitForSeconds(blinkInterval / 2);
-                DisableLight(_traffic);
+                DisableLamp();
             }
         }
 
         private void DisableLight(Traffic state)
         {
-            if (state == _traffic)
-                _lamp.color = Color.gray;
+            if (state == _definedState)
+            {
+                StopAllCoroutines();
+                DisableLamp();
+            }
         }
-
-        private void SetLampColor(Color color) => _definedColor = color;
+        
+        private void DefineLampColor(Color color) => _definedColor = color;
+        
+        private void DisableLamp() => _lamp.color = Color.gray;
     }
 }

@@ -74,10 +74,8 @@
             return _isSimulationStarted;
         }
 
-        public void ChangeTimers(Traffic state, float newTime)
-        {
+        public void ChangeTimers(Traffic state, float newTime) => 
             _trafficStatesData.GetState(state).Time = newTime;
-        }
 
         private void SetLightBoxes()
         {

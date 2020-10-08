@@ -20,10 +20,10 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/StatesLibrary.cs" />
         <option value="$PROJECT_DIR$/Assets/TrafficPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/LightBox.cs" />
         <option value="$PROJECT_DIR$/Assets/TrafficController.cs" />
         <option value="$PROJECT_DIR$/Assets/TrafficStatesData.cs" />
         <option value="$PROJECT_DIR$/Assets/TrafficState.cs" />
+        <option value="$PROJECT_DIR$/Assets/LightBox.cs" />
       </list>
     </option>
   </component>

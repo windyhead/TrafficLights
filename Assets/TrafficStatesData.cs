@@ -13,9 +13,10 @@
         {
             foreach (var state in _trafficStates)
             {
-                _trafficDictionary.Add(state.State, state);
                 state.Init();
+                _trafficDictionary.Add(state.State, state);
             }
+            
         }
 
         public TrafficState GetState(Traffic traffic)

@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _traffic: 2
+  _definedState: 2
   _lamp: {fileID: 1756209499788801586}
 --- !u!1 &1756209498860241307
 GameObject:
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _traffic: 0
+  _definedState: 0
   _lamp: {fileID: 1756209500641031445}
 --- !u!1 &1756209499199980643
 GameObject:
@@ -4522,7 +4522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _traffic: 1
+  _definedState: 1
   _lamp: {fileID: 1756209499645525032}
 --- !u!1 &1756209500359067406
 GameObject:
@@ -5464,7 +5464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _traffic: 3
+  _definedState: 3
   _lamp: {fileID: 1756209499831339586}
 --- !u!1 &1756209500641031443
 GameObject:
@@ -6438,7 +6438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b0e8660b66de40a7d50c67e5cbf6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _traffic: 4
+  _definedState: 4
   _lamp: {fileID: 1756209498860241309}
 --- !u!1 &3587471414862799667
 GameObject:
